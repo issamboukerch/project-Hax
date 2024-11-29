@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HexaRays</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        text-transform: capitalize;
+        transition: 0.2s linear;
+      }
+      body {
+        background: url(https://i.ibb.co/1znFsdb/Screenshot-2024-11-03-173339-new.png)
+          no-repeat;
+        background-size: contain;
+      }
+      #logo {
+        height: 50px;
+        width: 50px;
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 90px;
+        margin-top: 20px;
+        background-color: #fff;
+        border-radius: 15px;
+        width: 90%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
+      .logo-nav {
+        padding: 5px;
+        margin-right: 26px;
+      }
+      .btn {
+        margin-top: 10px;
+        display: inline-block;
+        background: #333;
+        color: #fff;
+        font-size: 17px;
+        border-radius: 5px;
+        margin-right: 25px;
+      }
+
+      .btn:hover {
+        letter-spacing: 1px;
+      }
+      #link-bag {
+        font-size: 19px;
+        padding: 10px;
+        padding-top: 12px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .landing-page {
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        width: 50%;
+        margin-top: 20%;
+      }
+      .slide_card {
+        padding: 0 190px;
+        display: flex;
+        overflow: auto;
+        scroll-behavior: smooth;
+      }
+      .slide_card::-webkit-scrollbar {
+        display: none;
+      }
+      .product_cont {
+        flex: 0 0 auto;
+        width: 600px;
+        height: 800px;
+        margin-right: 40px;
+      }
+      .pr {
+        border: none;
+        width: 190px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90eg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+        cursor: pointer;
+        z-index: 8;
+      }
+      .nx {
+        border: none;
+        width: 190px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90eg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+        cursor: pointer;
+        z-index: 8;
+      }
+      .pr {
+        left: 0;
+        transform: rotate(180deg);
+        background: none;
+        font-size: 25px;
+      }
+      .nx {
+        right: 0;
+        background: none;
+        font-size: 25px;
+      }
+      #pp {
+        font-size: 17px;
+        color: rgb(156, 156, 156);
+        padding: 20px;
+        margin: 10px;
+        width: 35%;
+        height: 300px;
+      }
+      .cunt {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline;
+      }
+      .img {
+        width: 100px;
+        height: 100px;
+      }
+      .h2 {
+        color: black;
+        margin-bottom: 25px;
+      }
+      .pp {
+        font-size: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hr">
+      <div class="header">
+        <div class="navbar">
+          <img id="logo" src="https://i.ibb.co/c1sWCVh/Screensho.jpg" alt="" />
+          <a href="/eco_product">PRODUCTS</a>
+          <a href="/admin">ADMIN</a>
+          <a href="">ABOUT</a>
+          <a href="">HOME</a>
+          <div class="logos">
+            <a href="" class="btn"
+              ><i id="link-bag" class="fa-solid fa-bag-shopping fa-bounce"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="cunt">
+        <div id="pp">
+          <h2 class="h2">Hexa Rays For Electronics</h2>
+          <p class="pp">
+            Welcome to Hexa Rays! At Hexa Rays, we specialize in selling
+            top-quality electronics to meet all your tech needs. From the latest
+            smartphones and laptops to innovative smart home devices, our
+            extensive selection ensures you’ll find exactly what you’re looking
+            for. We pride ourselves on offering reliable products from trusted
+            brands, backed by exceptional customer service. Shop with us and
+            experience the Hexa Rays difference today!
+          </p>
+        </div>
+        <div class="landing-page">
+          <button class="pr">
+            <i id="arrow" class="fa-solid fa-arrow-right fa-fade"></i>
+          </button>
+          <button class="nx">
+            <i class="fa-solid fa-arrow-right fa-beat-fade"></i>
+          </button>
+          <div class="slide_card">
+            @foreach ($pr as $li )
+            <div class="product_cont">
+              <div class="pro1">
+                <h1>{{$li->id}}</h1>
+                <h2>{{ $li->name }}</h2>
+                <img class="img" src="{{$li->img}}" alt="" />
+                <p>{{$li->info}}</p>
+              </div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let s = [...document.querySelectorAll(".slide_card")];
+      let n = [...document.querySelectorAll(".nx")];
+      let p = [...document.querySelectorAll(".pr")];
+
+      s.forEach((item, i) => {
+        let c = item.getBoundingClientRect();
+        let d = c.width;
+        n[i].addEventListener("click", () => {
+          item.scrollLeft += d;
+        });
+        p[i].addEventListener("click", () => {
+          item.scrollLeft -= d;
+        });
+      });
+    </script>
+  </body>
+</html>
