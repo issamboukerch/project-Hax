@@ -158,6 +158,24 @@
         font-size: 18px;
         text-align: center;
       }
+      .add-to-card {
+        border: solid 1px black;
+        height: 200px;
+        width: 150px;
+        transition: 0.3s;
+        display: none;
+      }
+      .add-to-card.active {
+        right: 0;
+      }
+      #close {
+        position: absolute;
+        cursor: pointer;
+        padding: 10px;
+      }
+      #ch:checked ~ .add-to-card {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -170,9 +188,12 @@
           <a href="">ABOUT</a>
           <a href="">HOME</a>
           <div class="logos">
-            <a href="" class="btn"
-              ><i id="link-bag" class="fa-solid fa-bag-shopping fa-bounce"></i
-            ></a>
+            <a href="" class="btn">
+              <label for="ch"
+                ><i id="link-bag" class="fa-solid fa-bag-shopping fa-bounce">
+                </i
+              ></label>
+            </a>
           </div>
         </div>
       </div>
@@ -208,6 +229,10 @@
             </div>
             @endforeach
           </div>
+        </div>
+        <input type="checkbox" id="ch" />
+        <div class="add-to-card">
+          <i id="close"><label id="close" for="ch">X</label></i>
         </div>
       </div>
     </div>
